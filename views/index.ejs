@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Chat App</title>
+</head>
+<body>
+    <div class="rooms-page">
+        <heading><h1 class="head">Join a chatroom, or create a new room.</h1></heading>
+            <div id="room-container">
+                <% if(Object.keys(rooms).length === 0) { %>
+                    <p id="no-rooms">No rooms have been created.</p>
+                <% } %> 
+                <% Object.keys(rooms).forEach(room => { %>
+                    <div id="room"><%= room %><a id="link" href="<%= room %>">Join</a></div>
+                <% }); %> 
+            </div>
+
+        <form id="create-room" action="/room" method="post">
+            <input name="room" type="text" placeholder="Enter the name of your room" required autocomplete="off">
+            <button type="submit">Create</button>
+        </form>
+    </div>
+
+
+</body>
+</html>

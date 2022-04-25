@@ -1,0 +1,323 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.app {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+.app > .screen{
+    display: none;
+}
+
+.app > .screen.active {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.screen .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+}
+
+.screen .form-input {
+    width: 100%;
+    margin: 20px, 0 px;
+}
+
+.screen .logo{
+    margin-bottom: 0px;
+    font-size: 30px;
+    color: white;
+    border-bottom: 4px solid #555;
+    padding: 5px 0px;
+    display: inline-block;
+}
+
+.screen .form-input {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.screen .form-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    font-size: 16px;
+}
+
+.screen .form-input button {
+    padding: 10px 20px;
+    background: #111;
+    color: #eee;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.chat-screen .header {
+    border-bottom: 1px solid black;
+    background: rgb(0, 75, 136);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+
+
+.chat-screen .header .logo {
+    font-size: 18px;
+    color: #eee;
+    font-weight: 600;
+}
+
+.header{
+    text-align: center;
+}
+
+.chat-screen .header button {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    background: transparent;
+    color: #eee;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+}
+
+.chat-screen .messages {
+    width: 100%;
+    height: calc(100% -  100px);
+    background: rgb(146, 146, 146);
+    overflow: auto;
+}                   
+
+ .chat-screen .messages .message {
+    padding: 10px;
+ }
+
+ .chat-screen .messages .message > div {
+    max-width: 80%;
+    background: lightgray;
+    box-shadow: 0px 0px 20px 5px rgba(0,0, 0,0.05);
+    padding: 10px;
+ }
+ .chat-screen .messages .message.my-message {
+     display: flex;
+     padding-right: 10px;
+    justify-content: flex-end;
+ }
+ .chat-screen .messages .message.other-message {
+     display: grid;
+     padding-right: 10px;
+    justify-content: flex-start;
+}
+
+.chat-screen .messages .message .name{
+    width: fit-content;
+    padding-right: 20px;
+}
+
+.chat-screen .messages .message.name{
+    display: flex;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 5px;
+}
+#self{
+    justify-self: end;
+}
+
+#message-input{
+    text-indent: 10px;
+}
+
+.chat-screen .messages .message .text{
+    word-wrap: break-word;
+}
+.chat-screen .messages .update {
+    text-align: center;
+    padding: 10px;
+    font-style: italic;
+}
+.chat-screen .typebox {
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+.chat-screen .typebox input {
+    flex: 1;
+    height: 50px;
+    font-size: 18px;
+}
+.chat-screen .typebox button{
+    width: 80px;
+    height: 100%;
+    background: #111;
+    color: #eee;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+#join-user{
+    border: 1px solid black ;
+    height: 30px;
+    width: 60px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("/images/arrow.png");
+    background-color: rgb(0, 75, 136) ;
+}
+
+.uN{
+    font-size: 30px;
+}
+
+#send-message{
+    background-color: transparent;
+    height: 50px;
+    width: 60px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("/images/send-button.png");
+}
+
+#message-input{
+    border: none;
+}
+
+#message-input:focus{
+    outline: none;
+}
+
+.app{
+    border: 1px solid black;
+}
+
+#self{
+    width: inherit;
+    justify-self: end;
+}
+
+.text{
+     width: inherit;
+     
+    }
+
+#msg{
+    width: inherit;
+    border-radius: 10px 0px 10px 10px;
+    color: white;
+    background: rgb(0, 75, 136);
+    box-shadow: -2px 2px black;
+}
+
+#oth-msg{
+    width: fit-content;
+    border-radius: 0px 10px 10px 10px;
+    color: black;
+    background: white;
+    box-shadow: 2px 2px black;
+}
+
+.join{
+    color: black;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 375px){
+    body{
+        height: 80vh
+    }
+    .rooms-page{
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 414px){
+    body{
+        height: 80vh
+    }
+    .rooms-page{
+        margin-top: 0px;
+    }
+}
+@media only screen and (max-width: 390){
+    body{
+        height: 80vh
+    }
+    .rooms-page{
+        margin-top: 0px;
+    }
+}
+@media only screen and (max-width: 393px){
+    body{
+        height: 80vh
+    }
+    .rooms-page{
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 360px){
+    body{
+        height: 80vh
+    }
+    .rooms-page{
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 412px){
+    body{
+        height: 80vh
+    }
+    .rooms-page{
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 820px){
+    body{
+        height: 80vh
+    }
+    .rooms-page{
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    body{
+        height: 80vh
+    }
+    .rooms-page{
+        margin-top: 0px;
+    }
+}
